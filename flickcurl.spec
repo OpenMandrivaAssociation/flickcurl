@@ -73,9 +73,9 @@ done
 %{__mkdir} -p %{buildroot}%{_mandir}/man1
 %{__cp} -p *.1.lzma %{buildroot}%{_mandir}/man1
 
-%post -n %{libname} -p %{__ldconfig}
+%post -n %{libname} -p /sbin/ldconfig
 
-%postun -n %{libname} -p %{__ldconfig}
+%postun -n %{libname} -p /sbin/ldconfig
 
 %files
 %doc LICENSE-2.0.txt LICENSE.html AUTHORS COPYING COPYING.LIB
