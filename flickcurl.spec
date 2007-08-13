@@ -1,5 +1,5 @@
 %define name flickcurl
-%define version 0.11
+%define version 0.12
 %define release %mkrel 1
 %define major 0
 %define libname %mklibname %name %major
@@ -10,10 +10,11 @@ Version:	%version
 Release:	%release
 Summary:	C library for the Flickr API
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
+Source1:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz.asc
 # manpages taken from debian package
-Source1:	%{name}.1
-Source2:	flickrdf.1
-Source3:	%{name}-config.1
+Source2:	%{name}.1
+Source3:	flickrdf.1
+Source4:	%{name}-config.1
 URL:		http://librdf.org/flickcurl/
 License:	LGPLv2 or ASL 2.0
 Group:		Networking/File transfer
@@ -57,7 +58,7 @@ This package contains the developement files for the %{name} library.
 
 %prep
 %setup -q
-%{__cp} -p %{SOURCE1} %{SOURCE2} %{SOURCE3} .
+%{__cp} -p %{SOURCE2} %{SOURCE3} %{SOURCE4} .
 
 %build
 %configure
