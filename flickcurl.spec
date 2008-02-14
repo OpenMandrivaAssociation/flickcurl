@@ -8,6 +8,7 @@ Version:	1.0
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
 Source1:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz.asc
