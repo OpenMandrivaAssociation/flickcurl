@@ -67,9 +67,13 @@ This package contains the developement files for the %{name} library.
 %clean
 %{__rm} -Rf %{buildroot}
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %files
 %doc LICENSE-2.0.txt LICENSE.html AUTHORS
