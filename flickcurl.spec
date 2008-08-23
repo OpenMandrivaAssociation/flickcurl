@@ -4,11 +4,10 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.4
+Version:	1.5
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
 Source1:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz.asc
@@ -16,6 +15,7 @@ BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
 BuildRequires:	raptor-devel >= 1.4.14
 BuildRequires:	libxslt-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Flickcurl is a C library for the Flickr API, handling creating the
