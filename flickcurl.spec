@@ -1,16 +1,16 @@
 %define major 0
 %define libname %mklibname %{name} %{major}
-%define devname %mklibname %{name} -d
+%define develname %mklibname %{name} -d
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.5
+Version:	1.6
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
 URL:		http://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
-Source1:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz.asc
+Source1:	%{SOURCE0}.asc
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
 BuildRequires:	raptor-devel >= 1.4.14
@@ -43,14 +43,14 @@ primarily the functions for reading photo, people and tags description,
 uploading photos, changing tags and comments.
 
 
-%package -n %{devname}
+%package -n %{develname}
 Summary:	Development files for %{libname}
 Group:		System/Libraries
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
 
-%description -n %{devname}
+%description -n %{develname}
 This package contains the developement files for the %{name} library.
 
 %prep
@@ -86,7 +86,7 @@ This package contains the developement files for the %{name} library.
 %files -n %{libname}
 %{_libdir}/lib%{name}.so.%{major}*
 
-%files -n %{devname}
+%files -n %{develname}
 %doc NOTICE
 %{_libdir}/lib%{name}.a
 %{_libdir}/lib%{name}.la
