@@ -4,13 +4,12 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.8
+Version:	1.13
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
 URL:		http://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
-Source1:	%{SOURCE0}.asc
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
 BuildRequires:	raptor-devel >= 1.4.14
