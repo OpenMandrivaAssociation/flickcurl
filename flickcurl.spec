@@ -14,7 +14,7 @@ BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
 BuildRequires:	raptor-devel >= 1.4.14
 BuildRequires:	libxslt-devel
-BuildRequires:	c-ares-devel
+BuildRequires:	c-ares-devel gnutls-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
