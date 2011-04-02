@@ -4,7 +4,7 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.20
+Version:	1.21
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
