@@ -4,7 +4,7 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.21
+Version:	1.22
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Networking/File transfer
@@ -12,10 +12,10 @@ URL:		http://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
-BuildRequires:	raptor-devel >= 1.4.14
+BuildRequires:	raptor2-devel
 BuildRequires:	libxslt-devel
-BuildRequires:	c-ares-devel gnutls-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	c-ares-devel
+BuildRequires:	gnutls-devel
 
 %description
 Flickcurl is a C library for the Flickr API, handling creating the
@@ -57,23 +57,15 @@ This package contains the developement files for the %{name} library.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --with-raptor=2 --disable-static
 %make
 
 %install
-%{__rm} -Rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-%{__rm} -Rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+%__rm -rf %{buildroot}
 
 %files
 %doc LICENSE-2.0.txt LICENSE.html AUTHORS
@@ -88,8 +80,6 @@ This package contains the developement files for the %{name} library.
 
 %files -n %{develname}
 %doc NOTICE
-%{_libdir}/lib%{name}.a
-%{_libdir}/lib%{name}.la
 %{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 %{_includedir}/%{name}.h
