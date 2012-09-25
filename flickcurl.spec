@@ -4,8 +4,8 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.22
-Release:	%mkrel 1
+Version:	1.23
+Release:	1
 License:	LGPLv2+
 Group:		Networking/File transfer
 URL:		http://librdf.org/flickcurl/
@@ -46,9 +46,9 @@ uploading photos, changing tags and comments.
 %package -n %{develname}
 Summary:	Development files for %{libname}
 Group:		System/Libraries
-Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name}-devel = %{version}-%{release}
-Provides:	lib%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{version}
+Provides:	%{name}-devel = %{EVRD}
+Provides:	lib%{name}-devel = %{EVRD}
 
 %description -n %{develname}
 This package contains the developement files for the %{name} library.
@@ -57,15 +57,11 @@ This package contains the developement files for the %{name} library.
 %setup -q
 
 %build
-%configure2_5x --with-raptor=2 --disable-static
+%configure2_5x --disable-static
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
-
-%clean
-%__rm -rf %{buildroot}
 
 %files
 %doc LICENSE-2.0.txt LICENSE.html AUTHORS
