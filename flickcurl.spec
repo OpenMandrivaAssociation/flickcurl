@@ -4,8 +4,8 @@
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
-Version:	1.23
-Release:	2
+Version:	1.26
+Release:	1
 License:	LGPLv2+
 Group:		Networking/File transfer
 URL:		http://librdf.org/flickcurl/
@@ -58,10 +58,10 @@ This package contains the developement files for the %{name} library.
 
 %build
 %configure2_5x --disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc LICENSE-2.0.txt LICENSE.html AUTHORS
