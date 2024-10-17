@@ -8,7 +8,7 @@ Version:	1.26
 Release:	1
 License:	LGPLv2+
 Group:		Networking/File transfer
-URL:		http://librdf.org/flickcurl/
+URL:		https://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
