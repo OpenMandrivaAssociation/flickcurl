@@ -10,6 +10,11 @@ License:	LGPLv2+
 Group:		Networking/File transfer
 URL:		https://librdf.org/flickcurl/
 Source0:	http://download.dajobe.org/flickcurl/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	curl-devel
 BuildRequires:	libxml2-devel >= 2.6.8
 BuildRequires:	raptor2-devel
