@@ -2,6 +2,9 @@
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
+# This 2016 code calls malloc, free, and atoi without a declaration.
+%global optflags %{optflags} -Wno-implicit-function-declaration
+
 Summary:	C library for the Flickr API
 Name:		flickcurl
 Version:	1.26
@@ -16,7 +19,7 @@ BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	curl-devel
-BuildRequires:	libxml2-devel >= 2.6.8
+BuildRequires:	pkgconfig(libxml-2.0) >= 2.6.8
 BuildRequires:	raptor2-devel
 BuildRequires:	libxslt-devel
 BuildRequires:	c-ares-devel
