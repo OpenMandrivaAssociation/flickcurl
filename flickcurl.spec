@@ -3,7 +3,8 @@
 %define develname %mklibname %{name} -d
 
 # This 2016 code calls malloc, free, and atoi without a declaration.
-%global optflags %{optflags} -Wno-implicit-function-declaration
+# Clang reports "use of undeclared identifier"; the warning flag does not declare them.
+%global optflags %{optflags} -Wno-implicit-function-declaration -include stdlib.h
 
 Summary:	C library for the Flickr API
 Name:		flickcurl
@@ -21,7 +22,7 @@ BuildRequires:	make
 BuildRequires:	curl-devel
 BuildRequires:	pkgconfig(libxml-2.0) >= 2.6.8
 BuildRequires:	raptor2-devel
-BuildRequires:	libxslt-devel
+BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	c-ares-devel
 BuildRequires:	gnutls-devel
 
